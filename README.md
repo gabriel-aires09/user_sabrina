@@ -146,27 +146,7 @@ Projeto educacional de código aberto.
 ## 👨‍💻 Autor
 
 Desenvolvido para fins educacionais.
-```
 
----
-
-## ✅ Checklist de Implementação
-
-Para organizar seu projeto, siga estes passos:
-
-1. ✅ Crie a estrutura de pastas
-2. ✅ Copie cada código para seu respectivo arquivo
-3. ✅ Organize os sprites em `assets/sabrina/`
-4. ✅ Adicione o cenário em `assets/background/`
-5. ✅ Abra `index.html` no navegador
-6. ✅ Teste todas as funcionalidades
-
----
-
-## 🚀 Comandos Úteis
-
-```bash
-# Ver estrutura de pastas
 tree
 
 # Criar todas as pastas de uma vez (Linux/Mac)
