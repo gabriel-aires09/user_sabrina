@@ -2,6 +2,9 @@
 
 Um jogo educativo para aprender histórias de usuário de forma interativa!
 
+<img width="1300" height="619" alt="image" src="https://github.com/user-attachments/assets/37c97894-5000-4ce7-9517-825552fa1ff6" />
+
+
 ## 📋 Descrição
 
 Este projeto é um jogo 2D onde o jogador controla um personagem e aprende sobre histórias de usuário (User Stories) através de interações com o cenário e objetos.
