@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Story Game</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+    <!-- ============================================
+         MENU INICIAL
+    ============================================ -->
+    <div id="menu-screen">
+        <div class="menu-container">
+            <h1 class="menu-title">🎮 User Story Game</h1>
+            <p class="menu-subtitle">Aprenda histórias de usuário jogando!</p>
+            
+            <div class="menu-buttons">
+                <button class="menu-btn menu-btn-primary" onclick="startGame()">
+                    ▶️ Iniciar Jogo
+                </button>
+                <button class="menu-btn menu-btn-secondary" onclick="showMenuStories()">
+                    📖 Ver Histórias do Menu
+                </button>
+            </div>
+            
+            <p class="menu-info">
+                Use WASD ou as setas do teclado para mover<br>
+                Colida com objetos para ver histórias de usuário
+            </p>
+        </div>
+    </div>
+
+    <!-- ============================================
+         MODAL DE HISTÓRIAS DO MENU
+    ============================================ -->
+    <div id="menu-stories-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeMenuStories()">×</button>
+            <h2 class="modal-title">📖 Histórias de Usuário - Menu</h2>
+            
+            <div id="menu-stories-container"></div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         TELA DO JOGO
+    ============================================ -->
+    <div class="game-container hidden" id="game-container">
+        <div class="game-area">
+            <div class="controls">
+                <p class="controls-title">🎮 Controles</p>
+                <p class="controls-text">WASD ou Setas para mover</p>
+                <p class="controls-text controls-highlight">✨ Histórias aparecem ao mover/colidir!</p>
+                <p class="controls-text controls-status" id="status">Direção: right | Parado</p>
+                <button class="btn-menu" onclick="returnToMenu()">🏠 Voltar ao Menu</button>
+            </div>
+            
+            <div id="obstacles"></div>
+            <div class="player" id="player">
+                <div class="player-placeholder">
+                    <div class="player-placeholder-icon" id="playerIcon">➡️</div>
+                    <div class="player-placeholder-text" id="playerState">IDLE</div>
+                    <div class="player-placeholder-direction" id="playerDirection">right</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-panel">
+            <div class="story-empty" id="storyEmpty">
+                <div>
+                    <div class="story-empty-icon">🎮</div>
+                    <p class="story-empty-title">Comece a jogar!</p>
+                    <p class="story-empty-text">Use as teclas para se mover e as histórias aparecerão</p>
+                </div>
+            </div>
+            <div class="story-content" id="storyContent" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/data/userStories.js"></script>
+    <script src="js/data/obstacles.js"></script>
+    <script src="js/sprites.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

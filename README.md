@@ -1,0 +1,176 @@
+# 🎮 User Story Game
+
+Um jogo educativo para aprender histórias de usuário de forma interativa!
+
+## 📋 Descrição
+
+Este projeto é um jogo 2D onde o jogador controla um personagem e aprende sobre histórias de usuário (User Stories) através de interações com o cenário e objetos.
+
+## 🚀 Como Executar
+
+### Opção 1: Servidor Local com Python
+```bash
+python -m http.server 8000
+```
+Acesse: `http://localhost:8000`
+
+### Opção 2: Servidor Local com Node.js
+```bash
+npx http-server
+```
+Acesse: `http://localhost:8080`
+
+### Opção 3: Live Server (VS Code)
+1. Instale a extensão "Live Server"
+2. Clique com botão direito em `index.html`
+3. Selecione "Open with Live Server"
+
+## 📁 Estrutura do Projeto
+
+```
+user-story-game/
+├── index.html              # Página principal
+├── assets/                 # Recursos do jogo
+│   ├── background/        # Imagens de fundo
+│   └── sabrina/          # Sprites do personagem
+├── css/                   # Estilos
+│   ├── menu.css          # Estilos do menu
+│   ├── game.css          # Estilos do jogo
+│   └── modal.css         # Estilos dos modais
+├── js/                    # Scripts
+│   ├── menu.js           # Lógica do menu
+│   ├── game.js           # Lógica principal do jogo
+│   ├── player.js         # Controle do personagem
+│   ├── sprites.js        # Carregamento de sprites
+│   └── data/             # Dados do jogo
+│       ├── userStories.js  # Histórias de usuário
+│       └── obstacles.js    # Obstáculos do cenário
+└── README.md             # Documentação
+```
+
+## 🎮 Controles
+
+- **WASD** ou **Setas do teclado**: Mover o personagem
+- **Colida com objetos**: Ver histórias de usuário
+- **Botão "Voltar ao Menu"**: Retornar ao menu principal
+
+## 📚 Histórias de Usuário
+
+### Menu (US-M01 a US-M04)
+- Visualizar menu principal
+- Iniciar jogo
+- Ver histórias do menu
+- Retornar ao menu
+
+### Jogo (US-001 a US-007)
+- Movimentação (esquerda, direita, cima, baixo)
+- Colisão com objetos (caixa, presente, estrela)
+
+## 🎨 Sprites
+
+Os sprites devem estar organizados em:
+```
+assets/sabrina/
+├── idle-right/   # Parado olhando para direita
+├── idle-left/    # Parado olhando para esquerda
+├── idle-up/      # Parado olhando para cima
+├── idle-down/    # Parado olhando para baixo
+├── walk-right/   # Andando para direita
+├── walk-left/    # Andando para esquerda
+├── walk-up/      # Andando para cima
+└── walk-down/    # Andando para baixo
+```
+
+Cada pasta deve conter sprites numerados: `1.png`, `2.png`, `3.png`, etc.
+
+## 🛠️ Personalização
+
+### Adicionar Nova História de Usuário
+
+Edite `js/data/userStories.js`:
+
+```javascript
+novaHistoria: {
+    id: "US-XXX",
+    title: "Título da História",
+    description: "Descrição completa...",
+    scenarios: [{
+        name: "Nome do Cenário",
+        conditions: ["Condição 1", "Condição 2"],
+        action: "Ação executada",
+        results: ["Resultado 1", "Resultado 2"]
+    }]
+}
+```
+
+### Adicionar Novo Obstáculo
+
+Edite `js/data/obstacles.js`:
+
+```javascript
+{ x: 300, y: 400, width: 60, height: 60, color: '#3b82f6', icon: '🎯', type: 'target' }
+```
+
+### Mudar Cenário de Fundo
+
+Substitua o arquivo `assets/background/scenario.png`
+
+### Ajustar Tamanho do Personagem
+
+Em `css/game.css`, modifique:
+```css
+.player {
+    width: 96px;   /* Largura */
+    height: 144px; /* Altura */
+}
+```
+
+## 📝 Tecnologias Utilizadas
+
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+
+## 🎓 Objetivo Educacional
+
+Este jogo foi desenvolvido para ensinar conceitos de **User Stories** de forma prática e interativa, demonstrando:
+- Estrutura de histórias de usuário
+- Cenários de teste (Dado/Quando/Então)
+- Critérios de aceite
+- Interação usuário-sistema
+
+## 📄 Licença
+
+Projeto educacional de código aberto.
+
+## 👨‍💻 Autor
+
+Desenvolvido para fins educacionais.
+```
+
+---
+
+## ✅ Checklist de Implementação
+
+Para organizar seu projeto, siga estes passos:
+
+1. ✅ Crie a estrutura de pastas
+2. ✅ Copie cada código para seu respectivo arquivo
+3. ✅ Organize os sprites em `assets/sabrina/`
+4. ✅ Adicione o cenário em `assets/background/`
+5. ✅ Abra `index.html` no navegador
+6. ✅ Teste todas as funcionalidades
+
+---
+
+## 🚀 Comandos Úteis
+
+```bash
+# Ver estrutura de pastas
+tree
+
+# Criar todas as pastas de uma vez (Linux/Mac)
+mkdir -p css js/data assets/background assets/sabrina/{idle-{right,left,up,down},walk-{right,left,up,down}}
+
+# Iniciar servidor
+python -m http.server 8000
